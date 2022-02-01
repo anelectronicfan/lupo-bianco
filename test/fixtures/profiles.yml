@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  gender: MyText
+  height: 1
+  weight: 1
+  shoulders: 1
+  neck: 1
+  chest: 1
+  bicep: 1
+  forearm: 1
+  wrist: 1
+  sleeve: 1
+  front_length: 1
+  back_length: 1
+  mid_waist: 1
+  waist: 1
+  hip: 1
+  upper_thigh: 1
+  middle_thigh: 1
+  calf: 1
+  ankle: 1
+  pants_length: 1
+  crotch: 1
+
+two:
+  name: MyText
+  gender: MyText
+  height: 1
+  weight: 1
+  shoulders: 1
+  neck: 1
+  chest: 1
+  bicep: 1
+  forearm: 1
+  wrist: 1
+  sleeve: 1
+  front_length: 1
+  back_length: 1
+  mid_waist: 1
+  waist: 1
+  hip: 1
+  upper_thigh: 1
+  middle_thigh: 1
+  calf: 1
+  ankle: 1
+  pants_length: 1
+  crotch: 1

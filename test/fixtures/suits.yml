@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  design: MyText
+  jacket_fit: MyText
+  pants_fit: MyText
+  jacket_pocket_style: MyText
+  jacket_pockets: 1
+  jacket_buttons: 1
+  inner_lining_color: MyText
+  vents: 1
+  lapel: MyText
+  inner_lining_name: MyText
+  shirt_chest_pocket: false
+  shirt_collar: MyText
+  shirt_cuff: MyText
+  shirt_initials: MyText
+  shirt_length: 1
+  shirt_sleeve_length: 1
+  extra_shirts: 1
+  extra_pants: 1
+  extra_jackets: 1
+  quality: 1
+  price: 1
+  notes: MyText
+
+two:
+  design: MyText
+  jacket_fit: MyText
+  pants_fit: MyText
+  jacket_pocket_style: MyText
+  jacket_pockets: 1
+  jacket_buttons: 1
+  inner_lining_color: MyText
+  vents: 1
+  lapel: MyText
+  inner_lining_name: MyText
+  shirt_chest_pocket: false
+  shirt_collar: MyText
+  shirt_cuff: MyText
+  shirt_initials: MyText
+  shirt_length: 1
+  shirt_sleeve_length: 1
+  extra_shirts: 1
+  extra_pants: 1
+  extra_jackets: 1
+  quality: 1
+  price: 1
+  notes: MyText
