@@ -44,11 +44,6 @@ class CartsController < ApplicationController
     @cart_price = @total_price
   end
 
-  def update
-  end
-
-  def destroy
-  end
 
   private
 

@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   delete '/login'   => 'session#destroy'    # logout link goes here, performs logout, redirect
   
   
-  resources :users
+  resources :users, except: [:show]
   
   resources :suits
-  resources :carts
+  resources :carts, except: [:new, :edit, :update, :destroy]
   get 'thanks', to: 'carts#thanks', as: 'thanks'
   resources :profiles
 end
