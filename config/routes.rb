@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :charges, only: [:new, :create]
   root to: 'pages#landing'
   get   '/home'     => 'pages#home', as: 'home'
 
