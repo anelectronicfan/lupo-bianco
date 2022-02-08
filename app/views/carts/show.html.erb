@@ -19,20 +19,26 @@ Price: $<%= s.price %>
 <hr>
 
 <% end %>
-<h2>Total Price: $<%= @cart_price %></h2>
-<%= form_tag carts_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    
-  </article>
+<% if @cart_price > 0 %>
+  <h2>Total Price: $<%= @cart_price %></h2>
+  <%= form_tag carts_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      
+    </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="One time payment"
-          data-amount="<%= @cart_price * 100 %>"
-          data-locale="auto"></script>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="One time payment"
+            data-amount="<%= @cart_price * 100 %>"
+            data-locale="auto"></script>
+  <% end %>
+<% else %>
+  <p>There's nothing here!</p>
+  <%= link_to "Maybe you'd like to change that?", new_suit_path %>
 <% end %>
+  
