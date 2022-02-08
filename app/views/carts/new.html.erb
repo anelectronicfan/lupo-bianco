@@ -1,2 +1,38 @@
-<h1>Carts#new</h1>
-<p>Find me in app/views/carts/new.html.erb</p>
+<h1>Shopping Cart</h1>
+<% @cart.suits.each do |s| %>
+
+<h3>
+Suit #<%=s.id%> - <%=s.jacket_fit%> <%=s.design%>
+|
+<%= link_to 'Edit', edit_suit_path(s) %>
+|
+<%= link_to 'Delete', suit_path(s), method: 'delete' %>
+<br>
+Extra Jacket × <%= s.extra_jackets %>
+<br>
+Extra Shirt × <%= s.extra_shirts %> 
+<br>
+Extra Pants × <%= s.extra_pants %>
+<br>
+Price: $<%= s.price %>
+</h3>
+<hr>
+
+<% end %>
+<h2>Total Price: $<%= @total_price %></h2>
+<%= form_tag carts_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="One time payment"
+          data-amount="<%= @total_price * 100 %>"
+          data-locale="auto"></script>
+<% end %>
+

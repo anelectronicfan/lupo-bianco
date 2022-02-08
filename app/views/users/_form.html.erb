@@ -1,21 +1,25 @@
 <%= form_with model: @user, local: true do |f| %>
     <div class = 'form'>
         <%= f.label :email %>
+        <br>
         <%= f.email_field :email, required: true %>
     </div>
     <br>
     <div class = 'form'>
         <%= f.label :password %>
+        <br>
         <%= f.password_field :password, required: true %>
     </div>
     <br>
     <div class = 'form'>
-        <%= f.label :mobile %>
-        +61<%= f.number_field :mobile, required: true, max: 499999999 %>
+        <%= f.label :mobile %>(+61)
+        <br>
+        <%= f.number_field :mobile, required: true, max: 499999999 %>
     </div>
     <br>
     <div class = 'form'>
         <%= f.label :address %>
+        <br>
         <%= f.text_field :address, required: true %>
     </div>
     <br>

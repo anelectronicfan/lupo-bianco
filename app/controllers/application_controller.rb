@@ -29,4 +29,13 @@ class ApplicationController < ActionController::Base
         end #login check
 
     end #check if logged in()
+
+    ## Function to create a cart and add that cart to a new user
+    def create_cart(user_id)
+        @cart = Cart.new
+        @cart.user_id = user_id
+        @cart.save
+    end
+
+
 end

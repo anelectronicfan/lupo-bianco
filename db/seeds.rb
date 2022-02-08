@@ -191,3 +191,10 @@ p1.suits << s1
 p3.suits << s2
 
 puts "Suit 'No.#{ s1.id }' belongs to #{s1.profile.name}"
+
+Cart.destroy_all
+
+c1 = Cart.create! user_id: u1.id
+c2 = Cart.create! user_id: u2.id
+
+

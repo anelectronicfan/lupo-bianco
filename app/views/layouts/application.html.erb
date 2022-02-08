@@ -15,26 +15,30 @@
   </head>
 
   <body>
-    <div id="sidebar">
 
-      <% if @current_user.present? %>
-      <%= link_to 'Log Out', login_path, method: 'delete' %>
-      |
-      <%= link_to 'Home', home_path %>
-      <%= link_to 'Profiles', profiles_path %>
-      <%= link_to 'Orders', suits_path %>
-      <%= link_to 'Account Settings', edit_user_path(@current_user) %>
-    <% else %>
-      <%= link_to 'Log In', login_path %>
-      |
-      <%= link_to 'Sign Up', new_user_path %>
-      |
-    <% end %>
     
+    <div class='main-area'>
+      <div id="nav">
+        <% if @current_user.present? %>
+        <%= image_tag("LupoBiancoWhiteResize.png", class: "nav-logo", alt: "Lupo Bianco Custom Tailoring") %>
+        <br>
+        <%= link_to 'Log Out', login_path, method: 'delete' %>
+        |
+        <%= link_to 'Home', home_path %>
+        |
+        <%= link_to 'Profiles', profiles_path %>
+        |
+        <%= link_to 'Orders', suits_path %>
+        |
+        <%= link_to 'Account Settings', edit_user_path(@current_user) %>
+        |
+        <%= link_to 'Shopping Cart', cart_path(@current_user.cart) %>
+        <hr>
+      <% end %>
+      
+      </div>
+      
+      <%= yield %>
     </div>
-
-    
-    
-    <%= yield %>
   </body>
 </html>

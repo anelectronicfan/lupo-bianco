@@ -54,7 +54,7 @@ class ProfilesController < ApplicationController
 
   def destroy
     Profile.destroy params[:id]
-    redirect_to profile_path
+    redirect_to profiles_path
   end
 
   private

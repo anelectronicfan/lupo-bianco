@@ -14,6 +14,10 @@ class UsersController < ApplicationController
     @user.save
 
     if @user.persisted?
+
+      # Create shopping cart here
+      create_cart(@user.id)
+
       redirect_to login_path
     else
       render :new
@@ -48,7 +52,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    Profile.destroy params[:id]
+    User.destroy params[:id]
     session[:user_id] = nil
     redirect_to home_path
   end

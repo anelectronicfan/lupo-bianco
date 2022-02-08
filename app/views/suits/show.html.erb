@@ -1,2 +1,105 @@
-<h1>Suits#show</h1>
-<p>Find me in app/views/suits/show.html.erb</p>
+<h1>Order Details For #<%=@suit.id%> -  <%=@suit.jacket_fit%> <%=@suit.design %></h1>
+
+<% unless @suit.paid %>
+    Pending Payment 
+    <br>
+    <%= link_to 'Edit', edit_suit_path(@suit) %>
+    |
+    <%= link_to 'Delete', suit_path(@suit), method: 'delete' %>
+    <br>
+<% end %>
+<div>
+    <h3>
+        Made for <%= link_to @suit.profile.name, profile_path(@suit.profile) %>
+    </h3>
+    <hr>
+    <h2>Suit Customizations</h2>
+    <h3>
+        Design: <%= @suit.design %>
+    </h3>
+
+    <h3>
+        Jacket Fit: <%= @suit.jacket_fit %>
+    </h3>
+
+    <h3>
+        Pants Fit: <%= @suit.pants_fit %>
+    </h3>
+
+    <h3>
+        Jacket Pocket Style: <%= @suit.jacket_pocket_style %>
+    </h3>
+
+    <h3>
+        Number of Jacket Buttons: <%= @suit.jacket_buttons %>
+    </h3>
+
+    <h3>
+        Inner Lining Colour: <%= @suit.inner_lining_color %>
+    </h3>
+
+    <h3>
+        Number of Vents: <%= @suit.vents %>
+    </h3>
+
+    <h3>
+        Lapel: <%= @suit.lapel %>
+    </h3>
+
+    <h3>
+        Name Inside of Jacket: <%= @suit.inner_lining_name %>
+    </h3>
+    <hr>
+    <h2>Shirt Customizations</h2>
+
+    <h3>
+        Pocket? <%= @suit.shirt_chest_pocket ? "Yes" : "No" %>
+        
+    </h3>
+
+    <h3>
+        Collar: <%= @suit.shirt_collar %>
+    </h3>
+
+    <h3>
+        Cuff: <%= @suit.shirt_cuff %>
+    </h3>
+
+    <h3>
+        Initials on Sleeve: <%= @suit.shirt_initials %>
+    </h3>
+
+    <h3>
+        Length: <%= @suit.shirt_length %>
+    </h3>
+
+    <h3>
+        Sleeve Length: <%= @suit.shirt_sleeve_length %>
+    </h3>
+    <hr>
+    <h3>
+        Number of Extra Jackets: <%= @suit.extra_jackets %>
+    </h3>
+
+    <h3>
+        Number of Extra Shirts: <%= @suit.extra_shirts %>
+    </h3>
+
+    <h3>
+        Number of Extra Pants: <%= @suit.extra_pants %>
+    </h3>
+
+    <h3>
+        Quality: Super <%= @suit.quality %>s
+    </h3>
+
+    <h3>
+        Price: $<%= @suit.price %>
+    </h3>
+
+    <h3>
+        Notes: <%= @suit.notes %>
+    </h3>
+</div>
+
+

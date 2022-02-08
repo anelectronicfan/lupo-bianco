@@ -10,240 +10,324 @@
 
 
 <%= form_with model: @profile, local: true do |f| %>
+
     <div class = 'form'>
         <%= f.label :name %>
+        <br>
         <%= f.text_field :name, required: true %>
     </div>
     <br>
+    
+    <br>
     <div class = 'form'>
-        <%= f.label :gender %>
-        <%= f.text_field :gender, required: true %>
+        <%= f.radio_button :gender, 'Male' %>
+        <%= f.label :gender_male, 'Male' %>
+
+        <%= f.radio_button :gender, 'Female' %>
+        <%= f.label :gender_female, 'Female' %>
     </div>
+    <br>
+    
     <br>
     <div class = 'form'>
         <%= f.label :height %>
-        <%= f.number_field :height, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :height, required: true %>
     </div>
+    <br>
+    
     <br>
     <div class = 'form'>
         <%= f.label :weight %>
-        <%= f.number_field :weight, required: true %>kg
+        (kg)
+        <br>
+        <%= f.number_field :weight, required: true %>
     </div>
+    <br>
+    <hr>
     <br>
     <div class = 'form'>
 
-        <div class = 'form-image'>
-            <%= image_tag("f-shoulders.jpeg") %>
-            <%= image_tag("m-shoulders.png") %>
-        </div>
+        
+            <%= image_tag("f-shoulders.jpeg", class: 'form-image') %>
+            <%= image_tag("m-shoulders.png", class: 'form-image') %>
+        
         <p>Apply small pressure to find the bone on each
 end of the shoulders, and measure from seam
 to seam.</p>
         <%= f.label :shoulders %>
-        <%= f.number_field :shoulders, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :shoulders, required: true %>
     </div>
+    <br>
+    <hr>
     <br>
     <div class = 'form'>
 
-        <div class = 'form-image'>
-            <%= image_tag("f-neck.jpeg") %>
-            <%= image_tag("m-neck.png") %>
-        </div>
+        
+            <%= image_tag("f-neck.jpeg", class: 'form-image') %>
+            <%= image_tag("m-neck.png", class: 'form-image') %>
+
         <p>Measure near the base of your neck. Leave
 one finger width in between the tape and
 neck (depending on preferred tightness)
 </p>
         <%= f.label :neck %>
-        <%= f.number_field :neck, required: true%>cm
+        (cm)
+        <br>
+        <%= f.number_field :neck, required: true%>
     </div>
+    <br>
+    <hr>
     <br>
     <div class = 'form'>
 
-        <div class = 'form-image'>
-            <%= image_tag("f-chest.jpeg") %>
-            <%= image_tag("m-chest.png") %>
-        </div>
+        
+            <%= image_tag("f-chest.jpeg", class: 'form-image') %>
+            <%= image_tag("m-chest.png", class: 'form-image') %>
+    
         <p>Wrap measuring tape all around your chest.
 Ensure the tape is directly under the armpits
 and is level.
 </p>
         <%= f.label :chest %>
-        <%= f.number_field :chest, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :chest, required: true %>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("f-bicep.jpeg") %>
-            <%= image_tag("m-bicep.png") %>
-        </div>
+       
+            <%= image_tag("f-bicep.jpeg", class: 'form-image') %>
+            <%= image_tag("m-bicep.png", class: 'form-image') %>
+        
         <p>Measure around the widest part of your bicep.
 </p>
         <%= f.label :bicep %>
-        <%= f.number_field :bicep, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :bicep, required: true %>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("m-forearm.png") %>
-        </div>
+        
+            <%= image_tag("m-forearm.png", class: 'form-image') %>
+       
         <p>Wrap the measuring tape around the thickest
 area of your forearm.</p>
         <%= f.label :forearm %>
-        <%= f.number_field :forearm, required: true%>cm
+        (cm)
+        <br>
+        <%= f.number_field :forearm, required: true%>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("m-wrist.png") %>
-        </div>
+        
+            <%= image_tag("m-wrist.png", class: 'form-image') %>
+        
         <p>Measure around the wrist (on skin).</p>
         <%= f.label :wrist %>
-        <%= f.number_field :wrist, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :wrist, required: true %>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("f-sleeve.jpeg") %>
-            <%= image_tag("m-sleeve.png") %>
-        </div>
+        
+            <%= image_tag("f-sleeve.jpeg", class: 'form-image') %>
+            <%= image_tag("m-sleeve.png", class: 'form-image') %>
+        
         <p>Measure from the 't seam' on the shoulder to
 the start of your wrist.</p>
         <%= f.label :sleeve %>
-        <%= f.number_field :sleeve, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :sleeve, required: true %>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("f-frontlength.jpeg") %>
-            <%= image_tag("m-frontlength.png") %>
-        </div>
+        
+            <%= image_tag("m-frontlength.png", class: 'form-image') %>
+        
         <p>Measure from top of your traps and straight
 down to between your first and second thumb
 knuckle.
 </p>
         <%= f.label :front_length %>
-        <%= f.number_field :front_length, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :front_length, required: true %>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("f-backlength.jpeg") %>
-            <%= image_tag("m-backlength.png") %>
-        </div>
+        
+            <%= image_tag("f-backlength.jpeg", class: 'form-image') %>
+            <%= image_tag("m-backlength.png", class: 'form-image') %>
+       
         <p>Measure from top of your traps down to
-desired length. Typically within 0.5cm of your
+desired length. Typically within 0.5 centimetres of your
 front length.
 </p>
         <%= f.label :back_length %>
-        <%= f.number_field :back_length, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :back_length, required: true %>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("f-midwaist.jpeg") %>
-            <%= image_tag("m-midwaist.png") %>
-        </div>
+        
+            <%= image_tag("f-midwaist.jpeg", class: 'form-image') %>
+            <%= image_tag("m-midwaist.png", class: 'form-image') %>
+        
         <p>Measure around your waist area from your
 belly button. Ensure the tape is level.
 </p>
         <%= f.label :mid_waist %>
-        <%= f.number_field :mid_waist, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :mid_waist, required: true %>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("f-waist.jpeg") %>
-            <%= image_tag("m-waist.png") %>
-        </div>
+        
+            <%= image_tag("f-waist.jpeg", class: 'form-image') %>
+            <%= image_tag("m-waist.png", class: 'form-image') %>
+       
         <p>Measure around your waist, on or slightly
 above where you usually wear your pants.
 Adjust to your preferred tightness.</p>
         <%= f.label :waist %>
-        <%= f.number_field :waist, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :waist, required: true %>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("f-hip.jpeg") %>
-            <%= image_tag("m-hip.png") %>
-        </div>
+        
+            <%= image_tag("f-hip.jpeg", class: 'form-image') %>
+            <%= image_tag("m-hip.png", class: 'form-image') %>
+        
         <p>Place your feet together and measure around
 the widest part of your hips. Ensure the tape is
 straight and level.
 </p>
         <%= f.label :hip %>
-        <%= f.number_field :hip, required: true%>cm
+        (cm)
+        <br>
+        <%= f.number_field :hip, required: true%>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("f-upperthigh.jpeg") %>
-            <%= image_tag("m-upperthigh.png") %>
-        </div>
+        
+            <%= image_tag("f-upperthigh.jpeg", class: 'form-image') %>
+            <%= image_tag("m-upperthigh.png", class: 'form-image') %>
+        
         <p>Measure around the thickest part of your upper
 thigh. Typically below the groin area.</p>
         <%= f.label :upper_thigh %>
-        <%= f.number_field :upper_thigh, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :upper_thigh, required: true %>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("m-middlethigh.png") %>
-        </div>
+       
+            <%= image_tag("m-middlethigh.png", class: 'form-image') %>
+        
+
         <p>Measure around the middle of your thigh.
-Typically found 10cm above your knee cap.</p>
+Typically found 10 centimetres above your knee cap.</p>
         <%= f.label :middle_thigh %>
-        <%= f.number_field :middle_thigh, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :middle_thigh, required: true %>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("f-calf.jpeg") %>
-            <%= image_tag("m-calf.png") %>
-        </div>
+        
+            <%= image_tag("f-calf.jpeg", class: 'form-image') %>
+            <%= image_tag("m-calf.png", class: 'form-image') %>
+        
         <p>Measure around the widest part of your calf.
 </p>
         <%= f.label :calf %>
-        <%= f.number_field :calf, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :calf, required: true %>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("m-ankle.png") %>
-        </div>
+        
+            <%= image_tag("m-ankle.png", class: 'form-image') %>
+        
         <p>Measure around your ankle (on skin).</p>
         <%= f.label :ankle %>
-        <%= f.number_field :ankle, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :ankle, required: true %>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("f-pantslength.jpeg") %>
-            <%= image_tag("m-pantslength.png") %>
-        </div>
+        
+            <%= image_tag("f-pantslength.jpeg", class: 'form-image') %>
+            <%= image_tag("m-pantslength.png", class: 'form-image') %>
+        
         <p>Measure from the top of the waistband to the
 bottom of your feet.</p>
         <%= f.label :pants_length %>
-        <%= f.number_field :pants_length, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :pants_length, required: true %>
     </div>
     <br>
+    <hr>
+    <br>
     <div class = 'form'>
-        <div class = 'form-image'>
-            <%= image_tag("f-crotch.jpeg") %>
-            <%= image_tag("m-crotch.png") %>
-        </div>
+        
+            <%= image_tag("f-crotch.jpeg", class: 'form-image') %>
+            <%= image_tag("m-crotch.png", class: 'form-image') %>
+        
         <p>Measure from front waist line to back waist
 line. Keep it tight but squat to ensure there is
 no discomfort.</p>
         <%= f.label :crotch %>
-        <%= f.number_field :crotch, required: true %>cm
+        (cm)
+        <br>
+        <%= f.number_field :crotch, required: true %>
     </div>
     <br>
 
-    <div class = 'form'>
-        <%= f.label :notes %>
-        <%= f.text_area :notes%>
-    </div>
+    
     <br>
     <%= f.submit %>
 <% end %>

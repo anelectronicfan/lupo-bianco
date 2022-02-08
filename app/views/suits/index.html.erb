@@ -1,2 +1,26 @@
-<h1>Suits#index</h1>
-<p>Find me in app/views/suits/index.html.erb</p>
+<h1>Order History</h1>
+
+<%= link_to "Create Order", new_suit_path %>
+
+
+    <% @suits.each do |s| %>
+    <p>
+        <% unless s.paid %>
+            Pending Payment For
+        <% end %>
+        <%= link_to "##{s.id} - #{s.jacket_fit} #{s.design}",  suit_path(s)%>
+        |
+        <%= link_to s.profile.name, profile_path(s.profile) %>
+
+        <% unless s.paid %>
+            |
+            <%= link_to 'Edit', edit_suit_path(s) %>
+            |
+            <%= link_to 'Delete', suit_path(s), method: 'delete' %>
+        <% end %>
+    
+    </p>
+    
+    <% end %>
+    
+

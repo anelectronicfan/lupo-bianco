@@ -1,0 +1,164 @@
+<% if @suit.errors.any? %>
+    <ul>
+        <% @suit.errors.full_messages do |e| %>
+        <li>
+            <%= e %>
+        </li>
+        <% end %>
+    </ul>    
+<% end %>
+
+<%= form_with model: @suit, local: true do |f| %>
+    <div class = 'form'>
+        <%= f.label :profile_id %>
+        <br>
+        <%= f.select :profile_id, @current_user.profiles.collect {|u| [u.name, u.id]}, prompt: true, required: true %>
+    </div>
+    <br>
+    <br>
+    <div class = 'form'>
+        <%= f.label :design %>
+        <br>
+        <%= f.select :design, ['Tuxedo', 'Double-Breasted', 'Femme Skirt', 'Other'] , prompt: true, required: true %>
+    </div>
+    <br>
+    <br>
+    <div class = 'form'>
+        <%= f.label :Quality %>
+        <br>
+        Super <%= f.select :quality, [100, 150, 200, 250], prompt: true, required: true %>  
+    </div>
+    <br><br>
+    <div class = 'form'>
+        <%= f.label :jacket_fit %>
+        <br>
+        <%= f.select :jacket_fit, ['Slim', 'Straight'] , prompt: true, required: true %>
+    </div>
+    <br><br>
+    <div class = 'form'>
+        <%= f.label :pants_fit %>
+        <br>
+        <%= f.select :pants_fit, ['Slim', 'Straight'] , prompt: true, required: true %>
+    </div>
+    <br><br>
+    <div class = 'form'>
+        <%= f.label :jacket_pocket_style %>
+        <br>
+        <%= f.select :jacket_pocket_style, ['Slanted','Straight', 'Slanted No Flaps', 'Straight No Flaps'], prompt: true, required: true %>   
+    </div>
+    <br><br>
+
+    <div class = 'form'>
+        <%= f.label :jacket_buttons %>
+        <br>
+        <%= f.select :jacket_buttons, [0, 1, 2, 3], prompt: true, required: true %>   
+    </div>
+    <br><br>
+
+    <div class = 'form'>
+        <%= f.label :inner_lining_color %>
+        <br>
+        <%= f.select :inner_lining_color, ['White','Black', 'Red', 'Blue'], prompt: true, required: true %>   
+    </div>
+    <br><br>
+    <div class = 'form'>
+        <%= f.label :inner_lining_name %>
+        <br>
+        <%= f.text_field :inner_lining_name %>
+    </div>
+    <br><br>
+
+    <div class = 'form'>
+        <%= f.label 'Number of Vents' %>
+        <br>
+        <%= image_tag("vent0.png", class: 'form-image', alt: 'vent0') %> 
+
+        <%= image_tag("vent1.png", class: 'form-image', alt: 'vent1') %>
+
+        <%= image_tag("vent2.png", class: 'form-image', alt: 'vent2') %> 
+        <br>
+        <%= f.select :vents, [0, 1, 2], prompt: true, required: true %>
+
+    </div>
+    <br><br>
+    <div class = 'form'>
+        <%= f.label :lapel %>
+        <br>
+        <%= image_tag("notch.png", class: 'form-image', alt: 'notch') %> 
+
+        <%= image_tag("peak.png", class: 'form-image', alt: 'peak') %>
+
+        <%= image_tag("shawl.png", class: 'form-image', alt: 'shawl') %> 
+        <br>
+        <%= f.select :lapel, ['Notch', 'Peak', 'Shawl'], prompt: true, required: true %>
+
+    </div>
+    <br><br>
+    <div class = 'form'>
+        <%= f.label :shirt_cuff %>
+        <br>
+        <%= image_tag("Barel.png", class: 'form-image', alt: 'Barel') %> 
+
+        <%= image_tag("French-Cuff.png", class: 'form-image', alt: 'French-Cuff') %>
+
+        <%= image_tag("Mitered.png", class: 'form-image', alt: 'Mitered') %> 
+ 
+        <br>
+        <%= f.select :shirt_cuff, ['Barel', 'French Cuff', 'Mitered'], prompt: true, required: true %>
+
+    </div>
+    <br><br>
+    <div class = 'form'>
+        <%= f.label :shirt_collar %>
+        <br>
+        <%= image_tag("button-down.png", class: 'form-image', alt: 'button-down') %> 
+
+        <%= image_tag("cutaway.png", class: 'form-image', alt: 'cutaway') %>
+
+        <%= image_tag("spread-collar.png", class: 'form-image', alt: 'spread-collar') %> 
+
+        <%= image_tag("wing-tip.png", class: 'form-image', alt: 'wing-tip') %> 
+        <br>
+        <%= f.select :shirt_collar, ['Button Down', 'Cutaway', 'Spread Collar', 'Straight Point', 'Wing Tip'], prompt: true, required: true %>
+
+    </div>
+    <br><br>
+    <div class = 'form'>
+        <%= f.label :shirt_chest_pocket %>
+        <br>
+        <%= f.select :shirt_chest_pocket, [true, false], prompt: true, required: true %>   
+    </div>
+    <br><br>
+    <div class = 'form'>
+        <%= f.label :shirt_initials %>
+        <br>
+        <%= f.text_field :shirt_initials%>
+    </div>
+    <br><br>
+    <div class = 'form'>
+        <%= f.label :extra_shirts %>
+        <br>
+        <%= f.number_field :extra_shirts, required: true, :value => 0 %>
+    </div>
+    <br><br>
+    <div class = 'form'>
+        <%= f.label :extra_pants %>
+        <br>
+        <%= f.number_field :extra_pants, required: true, :value => 0 %>
+    </div>
+    <br><br>
+    <div class = 'form'>
+        <%= f.label :extra_jackets %>
+        <br>
+        <%= f.number_field :extra_jackets, required: true, :value => 0 %>
+    </div>
+    <br><br>
+    <div class = 'form'>
+        Extra <%= f.label :notes %>
+        <br>
+        <%= f.text_area :notes %>
+    </div>
+    <br><br>
+
+    <%= f.submit %>
+<% end %>
