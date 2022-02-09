@@ -163,7 +163,8 @@ s1 = Suit.create!(
     extra_jackets: 0,
     quality: 250,
     price: 1350,
-    notes: "No belt loops, high-waisted pants please"
+    notes: "No belt loops, high-waisted pants please",
+    paid: true
 )
 
 s2 = Suit.create!(
@@ -182,7 +183,8 @@ s2 = Suit.create!(
     extra_jackets: 0,
     quality: 150,
     price: 650,
-    notes: "Skirt above knee"
+    notes: "Skirt above knee",
+    paid: true
 )
 
 p1.suits << s1

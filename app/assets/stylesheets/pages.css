@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+    
+    
+}
+
+#landing_main {
+    text-align: center;
+}
+.logo {
+    margin: auto;
+    max-width: 50%;
+    height: auto;
+}

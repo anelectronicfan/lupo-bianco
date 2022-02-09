@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  get 'pages/landing'
-  get 'pages/home'
-  get 'session/new'
-  get 'session/create'
-  get 'session/destroy'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'pages#landing'
+  get   '/home'     => 'pages#home', as: 'home'
+
+  get   '/login'    => 'session#new'        # show the login form
+  post  '/login'    => 'session#create'     # form submits to here, performs login, redirect
+  delete '/login'   => 'session#destroy'    # logout link goes here, performs logout, redirect
+  
+  resources :users
+
+  resources :suits
+  resources :carts
+  resources :profiles
 end

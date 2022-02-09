@@ -1,0 +1,97 @@
+<h1><%= @profile.name %>'s Profile</h1>
+<%= link_to 'Edit', edit_profile_path(@profile)  %>
+|
+<%= link_to 'Delete', profile_path(@profile), method: 'delete' %>
+<br>
+<div>
+    <h3>
+        Gender: <%= @profile.gender %>
+    </h3>
+
+    <h3>
+        Height: <%= @profile.height %>cm
+    </h3>
+
+    <h3>
+        Weight: <%= @profile.weight %>kg
+    </h3>
+
+    <h3>
+        Shoulders: <%= @profile.shoulders %>cm
+    </h3>
+
+    <h3>
+        Neck: <%= @profile.neck %>cm
+    </h3>
+
+    <h3>
+        Chest: <%= @profile.chest %>cm
+    </h3>
+
+    <h3>
+        Bicep: <%= @profile.bicep %>cm
+    </h3>
+
+    <h3>
+        Forearm: <%= @profile.wrist %>cm
+    </h3>
+
+    <h3>
+        Sleeve: <%= @profile.sleeve %>cm
+    </h3>
+
+    <h3>
+        Front Length: <%= @profile.front_length %>cm
+    </h3>
+
+    <h3>
+        Back Length: <%= @profile.back_length %>cm
+    </h3>
+
+    <h3>
+        Mid Waist: <%= @profile.mid_waist %>cm
+    </h3>
+
+    <h3>
+        Waist: <%= @profile.waist %>cm
+    </h3>
+
+    <h3>
+        Hip: <%= @profile.hip %>cm
+    </h3>
+
+    <h3>
+        Upper Thigh: <%= @profile.upper_thigh %>cm
+    </h3>
+
+    <h3>
+        Middle Thigh: <%= @profile.middle_thigh %>cm
+    </h3>
+
+    <h3>
+        Calf: <%= @profile.calf %>cm
+    </h3>
+
+    <h3>
+        Ankle: <%= @profile.ankle %>cm
+    </h3>
+
+    <h3>
+        Pants Length: <%= @profile.pants_length %>cm
+    </h3>
+
+    <h3>
+        Crotch: <%= @profile.crotch %>cm
+    </h3>
+</div>
+
+<h1>Order History</h1>
+<ul>
+    <% @suits.each do |s| %>
+        <li>
+            <%= link_to "##{s.id} - #{s.jacket_fit} #{s.design}",  suit_path(s)%>
+        </li>
+
+    <% end %>
+</ul>
+
