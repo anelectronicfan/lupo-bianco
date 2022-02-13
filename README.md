@@ -1,6 +1,6 @@
 # Lupo Bianco Custom Tailoring Database
 
-Lupo Bianco Custom Tailoring is a company in Strathfield, Sydney that sells custom-made suits to customers based on their measurements. They offer various customisation options to enable a bespoke experience. 
+(Lupo Bianco Custom Tailoring)[https://lupobiancosuits.com.au/] is a company in Strathfield, Sydney that sells custom-made suits to customers based on their measurements. They offer various customisation options to enable a bespoke experience. 
 
 This is a project programmed in RUBY 2.7.0 on RAILS 5.2.6.
 It is designed to allow a customer to freely order custom made suits online based on user-inputted measurements, see past order history and finally checkout using Stripe.
